@@ -8,6 +8,7 @@ import ServicesPage from './pages/ServicesPage';
 import PortfolioPage from './pages/PortfolioPage';
 import BlogPage from './pages/BlogPage';
 import ContactPage from './pages/ContactPage';
+import AIAssistant from './components/AIAssistant';
 
 export type PageView = 'home' | 'about' | 'services' | 'portfolio' | 'blog' | 'contact';
 
@@ -41,7 +42,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen selection:bg-indigo-500/30">
+    <div className="min-h-screen selection:bg-indigo-500/30 bg-[#030303]">
       <Navbar 
         isScrolled={isScrolled} 
         activePage={activePage} 
@@ -53,6 +54,9 @@ const App: React.FC = () => {
       </main>
 
       <Footer onNavigate={setActivePage} />
+      
+      {/* AI Assistant Hub */}
+      <AIAssistant />
     </div>
   );
 };
