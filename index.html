@@ -36,7 +36,26 @@
           linear-gradient(to right, var(--linear-stroke) 1px, transparent 1px),
           linear-gradient(to bottom, var(--linear-stroke) 1px, transparent 1px);
         background-size: 60px 60px;
-        mask-image: radial-gradient(circle at center, black, transparent 80%);
+        mask-image: radial-gradient(circle at center, black, transparent 95%);
+      }
+
+      /* Technical Frame */
+      .blueprint-frame::before {
+        content: '';
+        position: fixed;
+        inset: 20px;
+        border: 1px solid rgba(255,255,255,0.03);
+        pointer-events: none;
+        z-index: 50;
+      }
+
+      .corner-accent {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(255,255,255,0.1);
+        z-index: 60;
+        pointer-events: none;
       }
 
       /* Noise Texture Overlay */
@@ -90,6 +109,15 @@
         50% { transform: translateY(-20px) rotate(2deg); }
       }
 
+      .animate-spin-slow {
+        animation: spin 20s linear infinite;
+      }
+
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
       /* Custom scrollbar */
       ::-webkit-scrollbar { width: 4px; }
       ::-webkit-scrollbar-track { background: #000; }
@@ -107,7 +135,11 @@
     }
     </script>
   </head>
-  <body>
+  <body class="blueprint-frame">
+    <div class="corner-accent top-[20px] left-[20px] border-r-0 border-b-0"></div>
+    <div class="corner-accent top-[20px] right-[20px] border-l-0 border-b-0"></div>
+    <div class="corner-accent bottom-[20px] left-[20px] border-r-0 border-t-0"></div>
+    <div class="corner-accent bottom-[20px] right-[20px] border-l-0 border-t-0"></div>
     <div id="root"></div>
   </body>
 </html>

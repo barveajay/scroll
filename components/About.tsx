@@ -1,9 +1,27 @@
 
 import React from 'react';
+import { Activity, BarChart3, Fingerprint } from 'lucide-react';
+
+const GrowthLine = () => (
+  <svg viewBox="0 0 400 200" className="absolute top-1/2 left-0 w-full h-full opacity-5 pointer-events-none -translate-y-1/2">
+    <path 
+      d="M0 150 Q 50 140 100 160 T 200 100 T 300 80 T 400 20" 
+      fill="none" 
+      stroke="white" 
+      strokeWidth="1" 
+      className="line-draw"
+    />
+    <circle cx="100" cy="160" r="3" fill="white" />
+    <circle cx="200" cy="100" r="3" fill="white" />
+    <circle cx="300" cy="80" r="3" fill="white" />
+    <circle cx="400" cy="20" r="3" fill="#6366f1" />
+  </svg>
+);
 
 const About: React.FC = () => {
   return (
     <section id="about" className="py-32 bg-[#030303] relative overflow-hidden border-y border-white/5">
+      <GrowthLine />
       <div className="max-w-7xl mx-auto px-8">
         <div className="grid lg:grid-cols-12 gap-20 items-center">
           
@@ -16,14 +34,21 @@ const About: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
               
-              {/* Floating Linear HUD */}
+              {/* Floating Linear HUDs */}
               <div className="absolute top-8 left-8 p-4 glass-card rounded-xl border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-4 group-hover:translate-y-0">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-2 h-2 rounded-full bg-indigo-500" />
-                  <span className="text-[8px] font-black tracking-widest uppercase">System Status: Creative</span>
+                  <Activity size={10} className="text-indigo-500" />
+                  <span className="text-[8px] font-black tracking-widest uppercase">REALTIME ANALYSIS</span>
                 </div>
                 <div className="w-32 h-1 bg-white/5 rounded-full overflow-hidden">
                   <div className="h-full bg-indigo-500 w-3/4 animate-pulse" />
+                </div>
+              </div>
+
+              <div className="absolute bottom-8 right-8 p-4 glass-card rounded-xl border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-700 -translate-y-4 group-hover:translate-y-0">
+                <div className="flex items-center gap-3">
+                  <Fingerprint size={10} className="text-indigo-500" />
+                  <span className="text-[8px] font-black tracking-widest uppercase">ID: SCROLLFUEL_04</span>
                 </div>
               </div>
             </div>
@@ -32,6 +57,8 @@ const About: React.FC = () => {
             <svg viewBox="0 0 200 200" className="absolute -bottom-20 -left-20 w-80 h-80 opacity-10 animate-spin-slow">
               <circle cx="100" cy="100" r="90" stroke="white" strokeWidth="0.5" strokeDasharray="4 8" />
               <circle cx="100" cy="100" r="70" stroke="white" strokeWidth="0.5" strokeDasharray="1 4" />
+              <line x1="100" y1="10" x2="100" y2="190" stroke="white" strokeWidth="0.5" strokeOpacity="0.5" />
+              <line x1="10" y1="100" x2="190" y2="100" stroke="white" strokeWidth="0.5" strokeOpacity="0.5" />
             </svg>
           </div>
 
@@ -51,12 +78,12 @@ const About: React.FC = () => {
 
             <div className="grid sm:grid-cols-2 gap-10">
               {[
-                { title: 'LINEAR PRECISION', desc: 'Every pixel serves a purpose in our technical brand ecosystems.' },
-                { title: 'CULTURAL IMPACT', desc: 'Storytelling that transcends screens and creates movement.' }
+                { icon: BarChart3, title: 'LINEAR PRECISION', desc: 'Every pixel serves a purpose in our technical brand ecosystems.' },
+                { icon: Activity, title: 'CULTURAL IMPACT', desc: 'Storytelling that transcends screens and creates movement.' }
               ].map((item, idx) => (
                 <div key={idx} className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <span className="text-[10px] font-black text-indigo-500">0{idx + 1}</span>
+                    <item.icon size={14} className="text-indigo-500" />
                     <h4 className="text-xs font-black tracking-widest uppercase">{item.title}</h4>
                   </div>
                   <p className="text-sm text-gray-500 leading-relaxed font-light">{item.desc}</p>

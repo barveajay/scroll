@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowUpRight, MousePointer2 } from 'lucide-react';
+import { ArrowUpRight, MousePointer2, Scan, Hash, Compass } from 'lucide-react';
 
 const LinearArt = () => (
   <svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full opacity-40 float-animation">
@@ -18,6 +18,9 @@ const LinearArt = () => (
     {/* Marketing Curves */}
     <path d="M200 400C250 350 350 450 450 350S600 300 650 350" stroke="#6366f1" strokeWidth="1" strokeOpacity="0.5" className="line-draw" />
     
+    {/* Linear Connections */}
+    <path d="M150 100 L100 50 M650 100 L700 50 M150 450 L100 500 M650 450 L700 500" stroke="white" strokeWidth="0.5" strokeOpacity="0.1" />
+
     {/* Stylized Feed Items */}
     <rect x="180" y="180" width="120" height="100" rx="8" stroke="white" strokeWidth="0.5" strokeOpacity="0.1" />
     <rect x="320" y="180" width="120" height="100" rx="8" stroke="white" strokeWidth="0.5" strokeOpacity="0.1" />
@@ -37,8 +40,8 @@ const Hero: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl w-full flex flex-col items-center text-center">
         <div className="flex items-center gap-3 mb-8 px-4 py-1.5 rounded-full border border-white/5 bg-white/[0.02] backdrop-blur-md animate-fade-in">
-          <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-ping" />
-          <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-white/40">Next-Gen Creative Agency</span>
+          <Scan size={12} className="text-indigo-500" />
+          <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-white/40">Technical Identity Lab</span>
         </div>
 
         <h1 className="text-6xl md:text-[8.5vw] font-black font-heading leading-[0.85] tracking-tighter mb-12">
@@ -53,20 +56,33 @@ const Hero: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 reveal-text" style={{ animationDelay: '0.6s' }}>
             <button className="group relative w-full sm:w-auto px-12 py-5 bg-white text-black font-black text-xs uppercase tracking-[0.3em] rounded-full transition-all hover:bg-indigo-600 hover:text-white overflow-hidden">
-              <span className="relative z-10">Start Project</span>
+              <span className="relative z-10">Initialize Sync</span>
               <div className="absolute inset-0 bg-indigo-500 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
             </button>
             <button className="flex items-center gap-4 text-xs font-black tracking-[0.3em] uppercase text-white/40 hover:text-white transition-all group">
-              View Showcase
+              System Manifest
               <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Interactive Cursor Mockup element */}
-      <div className="absolute bottom-16 right-16 hidden lg:flex items-center gap-4 text-[10px] font-bold tracking-widest text-white/20 uppercase">
-        <MousePointer2 size={12} /> Live Preview System V2.4
+      {/* Floating Specs */}
+      <div className="absolute top-1/4 left-12 hidden xl:block space-y-4 opacity-20 font-mono text-[10px] tracking-widest uppercase">
+        <div className="flex items-center gap-2"><div className="w-1 h-1 bg-white" /> X: 45.2341</div>
+        <div className="flex items-center gap-2"><div className="w-1 h-1 bg-white" /> Y: 12.0094</div>
+        <div className="flex items-center gap-2"><div className="w-1 h-1 bg-white" /> Z: STABLE</div>
+      </div>
+
+      <div className="absolute bottom-16 right-16 hidden lg:flex flex-col items-end gap-2 text-[10px] font-bold tracking-widest text-white/20 uppercase">
+        <div className="flex items-center gap-4">
+           <Compass size={12} className="animate-spin-slow" /> 
+           SYSTEM.VERSION_2.4.0
+        </div>
+        <div className="flex items-center gap-4">
+           <Hash size={12} />
+           AUTH.KEY_ verified
+        </div>
       </div>
       
       {/* Decorative vertical lines */}
