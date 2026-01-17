@@ -8,7 +8,7 @@ const WHATSAPP_NUMBER = "7822830497";
 const AIAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{ role: 'user' | 'assistant', content: string }[]>([
-    { role: 'assistant', content: "System initialized. I am the ScrollFuel Brand Strategist. How can we fuel your brand's digital architecture today?" }
+    { role: 'assistant', content: "System initialized. I am the ScrollFuel Brand Strategist. How can we fuel your brand's digital architecture in Nagpur or globally today?" }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -34,15 +34,21 @@ const AIAssistant: React.FC = () => {
         model: 'gemini-3-flash-preview',
         contents: [...messages.map(m => m.content), userMessage].join('\n'),
         config: {
-          systemInstruction: `You are the ScrollFuel AI Assistant, a high-end digital agency expert. 
+          systemInstruction: `You are the ScrollFuel AI Assistant, a technical brand architect and digital marketing expert. 
+          Website: scrollfuel.in
+          Email: scrollfuel@gmail.com
+          Location: Nagpur HQ, Wardha Rd, Nagpur, Maharashtra, India.
+          
           We specialize in: 
-          1. Videography & Cinematic Productions
-          2. Technical Brand Architecture & Design
-          3. Social Media Strategy
-          4. Web Performance & UI/UX.
-          Our studio is in Los Angeles (Est. 2014).
-          When asked for direct contact or human help, emphasize our WhatsApp at ${WHATSAPP_NUMBER}.
-          Keep responses concise, technical, and sophisticated. Use "we" and "our team".`,
+          1. Videography & Cinematic Productions (Ads, Music Videos, Documentaries)
+          2. Technical Brand Architecture & Design (Logos, Visual Identity)
+          3. Social Media Strategy & Growth
+          4. Performance Marketing & Digital Ads
+          5. Web Architecture (High-conversion UIs)
+
+          When users ask for our location: We are based in Nagpur at Bidoba Sahkari Sanstha, plot no 133, Wardha Rd.
+          When asked for direct contact: Redirect them to our WhatsApp at ${WHATSAPP_NUMBER} or email scrollfuel@gmail.com.
+          Keep responses sophisticated, visionary, and technical. Use professional terminology.`,
           temperature: 0.7,
         },
       });
@@ -51,7 +57,7 @@ const AIAssistant: React.FC = () => {
       setMessages(prev => [...prev, { role: 'assistant', content: aiText }]);
     } catch (error) {
       console.error("AI Sync Error:", error);
-      setMessages(prev => [...prev, { role: 'assistant', content: "Protocol error. Please sync directly via WhatsApp." }]);
+      setMessages(prev => [...prev, { role: 'assistant', content: "Protocol error. Please sync directly via WhatsApp or email scrollfuel@gmail.com." }]);
     } finally {
       setIsLoading(false);
     }
@@ -63,7 +69,7 @@ const AIAssistant: React.FC = () => {
 
   return (
     <div className="fixed bottom-8 right-8 z-[100] font-sans">
-      {/* WhatsApp Quick Access (Separate FAB for accessibility) */}
+      {/* WhatsApp Quick Access */}
       <button 
         onClick={openWhatsApp}
         className="absolute bottom-20 right-0 w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300"
@@ -96,10 +102,10 @@ const AIAssistant: React.FC = () => {
               <Bot size={16} className="text-white" />
             </div>
             <div>
-              <h3 className="text-xs font-black uppercase tracking-widest text-white">Brand Strategist</h3>
+              <h3 className="text-xs font-black uppercase tracking-widest text-white">Nagpur Hub Strategist</h3>
               <div className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-[8px] text-gray-500 font-bold tracking-widest uppercase">AI Logic Online</span>
+                <span className="text-[8px] text-gray-500 font-bold tracking-widest uppercase">System Online</span>
               </div>
             </div>
           </div>
@@ -116,7 +122,7 @@ const AIAssistant: React.FC = () => {
               <div className={`max-w-[85%] p-4 rounded-2xl text-xs leading-relaxed ${
                 m.role === 'user' 
                   ? 'bg-indigo-600 text-white rounded-tr-none' 
-                  : 'bg-white/5 border border-white/10 text-gray-300 rounded-tl-none'
+                  : 'bg-white/5 border border-white/10 text-gray-300 rounded-tl-none shadow-[0_4px_12px_rgba(0,0,0,0.1)]'
               }`}>
                 {m.content}
               </div>
@@ -134,10 +140,10 @@ const AIAssistant: React.FC = () => {
         {/* Quick Actions */}
         <div className="px-6 py-2 flex gap-2 overflow-x-auto no-scrollbar">
           <button 
-            onClick={() => setInput("Tell me about your services")}
+            onClick={() => setInput("Where is your Nagpur studio?")}
             className="whitespace-nowrap px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-[9px] font-bold uppercase tracking-widest text-gray-400 hover:text-white hover:border-indigo-500 transition-all"
           >
-            Services
+            Location
           </button>
           <button 
             onClick={() => setInput("How to start a project?")}
@@ -155,7 +161,7 @@ const AIAssistant: React.FC = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-              placeholder="Query system..."
+              placeholder="Query brand logic..."
               className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-xs focus:outline-none focus:border-indigo-500 pr-12 transition-all"
             />
             <button 
@@ -167,7 +173,7 @@ const AIAssistant: React.FC = () => {
             </button>
           </div>
           <p className="mt-3 text-[8px] text-center text-gray-600 uppercase font-black tracking-[0.2em]">
-            Sync with human: {WHATSAPP_NUMBER}
+            scrollfuel.in | nagpur, mh
           </p>
         </div>
       </div>

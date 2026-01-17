@@ -1,41 +1,17 @@
 
 import React from 'react';
-import { ArrowUpRight, MousePointer2, Scan, Hash, Compass } from 'lucide-react';
-
-const LinearArt = () => (
-  <svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full opacity-40 float-animation">
-    {/* Stylized Browser / Social Grid */}
-    <rect x="150" y="100" width="500" height="350" rx="20" stroke="white" strokeWidth="0.5" strokeOpacity="0.2" className="line-draw" />
-    <path d="M150 160H650" stroke="white" strokeWidth="0.5" strokeOpacity="0.2" className="line-draw" />
-    <circle cx="180" cy="130" r="6" stroke="white" strokeWidth="0.5" strokeOpacity="0.2" className="line-draw" />
-    <circle cx="210" cy="130" r="6" stroke="white" strokeWidth="0.5" strokeOpacity="0.2" className="line-draw" />
-    <circle cx="240" cy="130" r="6" stroke="white" strokeWidth="0.5" strokeOpacity="0.2" className="line-draw" />
-    
-    {/* Floating Data Nodes */}
-    <circle cx="580" cy="180" r="40" stroke="#6366f1" strokeWidth="1" className="line-draw" />
-    <path d="M580 140V220M540 180H620" stroke="#6366f1" strokeWidth="1" strokeDasharray="4 4" className="line-draw" />
-    
-    {/* Marketing Curves */}
-    <path d="M200 400C250 350 350 450 450 350S600 300 650 350" stroke="#6366f1" strokeWidth="1" strokeOpacity="0.5" className="line-draw" />
-    
-    {/* Linear Connections */}
-    <path d="M150 100 L100 50 M650 100 L700 50 M150 450 L100 500 M650 450 L700 500" stroke="white" strokeWidth="0.5" strokeOpacity="0.1" />
-
-    {/* Stylized Feed Items */}
-    <rect x="180" y="180" width="120" height="100" rx="8" stroke="white" strokeWidth="0.5" strokeOpacity="0.1" />
-    <rect x="320" y="180" width="120" height="100" rx="8" stroke="white" strokeWidth="0.5" strokeOpacity="0.1" />
-    <rect x="460" y="180" width="120" height="100" rx="8" stroke="white" strokeWidth="0.5" strokeOpacity="0.1" />
-    <rect x="180" y="300" width="260" height="100" rx="8" stroke="white" strokeWidth="0.5" strokeOpacity="0.1" />
-  </svg>
-);
+import { ArrowUpRight, MousePointer2, Scan, Hash, Compass, Box } from 'lucide-react';
+import { SocialEcosystem3D } from './Linear3DModels';
 
 const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden px-8">
       {/* Background Grid & Art */}
       <div className="absolute inset-0 z-0 bg-grid opacity-20" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl aspect-video z-0 pointer-events-none">
-        <LinearArt />
+      
+      {/* 3D Isometric Ecosystem Model */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl aspect-square lg:aspect-video z-0 pointer-events-none opacity-50">
+        <SocialEcosystem3D />
       </div>
 
       <div className="relative z-10 max-w-7xl w-full flex flex-col items-center text-center">
@@ -67,11 +43,14 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Floating Specs */}
+      {/* Floating 3D Specs */}
       <div className="absolute top-1/4 left-12 hidden xl:block space-y-4 opacity-20 font-mono text-[10px] tracking-widest uppercase">
+        <div className="flex items-center gap-3 text-indigo-500">
+           <Box size={10} /> WIREFRAME_MODEL_01
+        </div>
         <div className="flex items-center gap-2"><div className="w-1 h-1 bg-white" /> X: 45.2341</div>
         <div className="flex items-center gap-2"><div className="w-1 h-1 bg-white" /> Y: 12.0094</div>
-        <div className="flex items-center gap-2"><div className="w-1 h-1 bg-white" /> Z: STABLE</div>
+        <div className="flex items-center gap-2 font-black text-indigo-500"><div className="w-1 h-1 bg-indigo-500" /> Z: ISOMETRIC_STABLE</div>
       </div>
 
       <div className="absolute bottom-16 right-16 hidden lg:flex flex-col items-end gap-2 text-[10px] font-bold tracking-widest text-white/20 uppercase">

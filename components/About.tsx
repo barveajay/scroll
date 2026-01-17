@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Activity, BarChart3, Fingerprint } from 'lucide-react';
+import { GrowthEngine3D } from './Linear3DModels';
 
 const GrowthLine = () => (
   <svg viewBox="0 0 400 200" className="absolute top-1/2 left-0 w-full h-full opacity-5 pointer-events-none -translate-y-1/2">
@@ -22,7 +23,13 @@ const About: React.FC = () => {
   return (
     <section id="about" className="py-32 bg-[#030303] relative overflow-hidden border-y border-white/5">
       <GrowthLine />
-      <div className="max-w-7xl mx-auto px-8">
+      
+      {/* 3D Growth Engine Art Background */}
+      <div className="absolute right-0 top-0 w-1/2 h-full pointer-events-none">
+        <GrowthEngine3D />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-20 items-center">
           
           <div className="lg:col-span-6 relative">
@@ -52,14 +59,6 @@ const About: React.FC = () => {
                 </div>
               </div>
             </div>
-            
-            {/* Background circular linear art */}
-            <svg viewBox="0 0 200 200" className="absolute -bottom-20 -left-20 w-80 h-80 opacity-10 animate-spin-slow">
-              <circle cx="100" cy="100" r="90" stroke="white" strokeWidth="0.5" strokeDasharray="4 8" />
-              <circle cx="100" cy="100" r="70" stroke="white" strokeWidth="0.5" strokeDasharray="1 4" />
-              <line x1="100" y1="10" x2="100" y2="190" stroke="white" strokeWidth="0.5" strokeOpacity="0.5" />
-              <line x1="10" y1="100" x2="190" y2="100" stroke="white" strokeWidth="0.5" strokeOpacity="0.5" />
-            </svg>
           </div>
 
           <div className="lg:col-span-6 space-y-12">
