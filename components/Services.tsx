@@ -3,8 +3,6 @@ import React from 'react';
 import { SERVICES } from '../constants';
 
 const ServiceIcon = ({ type }: { type: string }) => {
-  // Linear representations of digital marketing concepts
-  // Fix: Use React.JSX.Element to avoid global JSX namespace issues
   const icons: Record<string, React.JSX.Element> = {
     Video: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8">
@@ -54,19 +52,19 @@ const ServiceIcon = ({ type }: { type: string }) => {
 
 const Services: React.FC = () => {
   return (
-    <section id="services" className="py-32 bg-black relative">
+    <section id="services" className="py-32 bg-brand-black relative">
       <div className="absolute inset-0 bg-grid opacity-5 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-8">
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12">
           <div className="space-y-4">
-            <span className="text-[10px] font-black tracking-[0.5em] uppercase text-indigo-500">Service Map</span>
-            <h2 className="text-4xl md:text-7xl font-heading font-bold tracking-tighter leading-none">
+            <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-primary">Service Map</span>
+            <h2 className="text-4xl md:text-7xl font-heading font-bold tracking-tighter leading-none text-brand-white">
               TECHNICAL <br /> SOLUTIONS.
             </h2>
           </div>
           <p className="text-gray-500 max-w-sm text-sm font-light leading-relaxed border-l border-white/10 pl-8">
-            Modular brand architecture designed for the future of digital engagement. Scalable, cinematic, and precise.
+            Modular brand architecture designed for the future of digital engagement. <span className="text-brand-accent">Scalable, cinematic, and precise.</span>
           </p>
         </div>
 
@@ -74,18 +72,18 @@ const Services: React.FC = () => {
           {SERVICES.map((service, idx) => (
             <div 
               key={service.id} 
-              className="group p-12 bg-black hover:bg-neutral-900/40 transition-all duration-700 cursor-pointer relative overflow-hidden"
+              className="group p-12 bg-brand-black hover:bg-neutral-900/40 transition-all duration-700 cursor-pointer relative overflow-hidden"
             >
               {/* Corner Accent */}
-              <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-white/5 transition-colors group-hover:border-indigo-500/30" />
+              <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-white/5 transition-colors group-hover:border-brand-accent/30" />
               
               <div className="relative z-10 space-y-10">
-                <div className="text-indigo-500 group-hover:scale-110 transition-transform duration-500">
+                <div className="text-brand-primary group-hover:text-brand-accent group-hover:scale-110 transition-all duration-500">
                   <ServiceIcon type={service.icon} />
                 </div>
                 
                 <div className="space-y-4">
-                  <h3 className="text-xl font-bold font-heading tracking-tight group-hover:text-indigo-400 transition-colors">
+                  <h3 className="text-xl font-bold font-heading tracking-tight text-brand-white group-hover:text-brand-accent transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed font-light line-clamp-3 group-hover:text-gray-300 transition-colors">
@@ -94,11 +92,11 @@ const Services: React.FC = () => {
                 </div>
 
                 <div className="pt-4 flex items-center justify-between">
-                  <span className="text-[9px] font-black tracking-widest text-white/20 uppercase group-hover:text-indigo-500/50 transition-colors">
+                  <span className="text-[9px] font-black tracking-widest text-white/20 uppercase group-hover:text-brand-primary/50 transition-colors">
                     Solution 0{idx + 1}
                   </span>
-                  <div className="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center group-hover:border-indigo-500/50 transition-all">
-                    <div className="w-1 h-1 bg-white group-hover:bg-indigo-500 transition-colors" />
+                  <div className="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center group-hover:border-brand-primary/50 transition-all">
+                    <div className="w-1 h-1 bg-white group-hover:bg-brand-accent transition-colors" />
                   </div>
                 </div>
               </div>

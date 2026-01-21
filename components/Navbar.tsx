@@ -29,15 +29,15 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, activePage, onNavigate }) =
     <nav 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         isScrolled || activePage !== 'home' 
-          ? 'bg-black/90 backdrop-blur-xl py-5' 
+          ? 'bg-brand-black/90 backdrop-blur-xl py-5' 
           : 'bg-transparent py-10'
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-8 flex justify-between items-center">
         {/* Logo */}
         <button onClick={() => handleNavClick('home')} className="flex items-center group">
-          <span className="text-2xl font-heading tracking-tighter group-hover:tracking-widest transition-all duration-700">
-            SCROLL<span className="text-indigo-600">FUEL</span>
+          <span className="text-2xl font-heading tracking-tighter group-hover:tracking-widest transition-all duration-700 text-brand-white">
+            SCROLL<span className="text-brand-primary">FUEL</span>
           </span>
         </button>
 
@@ -48,11 +48,11 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, activePage, onNavigate }) =
               key={link.id} 
               onClick={() => handleNavClick(link.id)}
               className={`text-[10px] font-bold uppercase tracking-[0.2em] transition-all relative group ${
-                activePage === link.id ? 'text-indigo-500' : 'text-white/40 hover:text-white'
+                activePage === link.id ? 'text-brand-accent' : 'text-white/40 hover:text-white'
               }`}
             >
               {link.name}
-              <span className={`absolute -bottom-2 left-0 h-[1px] bg-indigo-600 transition-all duration-500 ${
+              <span className={`absolute -bottom-2 left-0 h-[1px] bg-brand-primary transition-all duration-500 ${
                 activePage === link.id ? 'w-full' : 'w-0 group-hover:w-full'
               }`} />
             </button>
@@ -60,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, activePage, onNavigate }) =
           
           <button 
             onClick={() => handleNavClick('contact')}
-            className="px-8 py-3 bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-indigo-600 hover:text-white transition-all transform hover:scale-105 active:scale-95"
+            className="px-8 py-3 bg-brand-white text-brand-black text-[10px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-brand-accent hover:text-brand-black transition-all transform hover:scale-105 active:scale-95"
           >
             Start Project
           </button>
@@ -77,7 +77,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, activePage, onNavigate }) =
 
       {/* Overlay Menu */}
       <div 
-        className={`fixed inset-0 bg-black z-[-1] flex flex-col justify-center px-12 space-y-8 transition-all duration-700 ${
+        className={`fixed inset-0 bg-brand-black z-[-1] flex flex-col justify-center px-12 space-y-8 transition-all duration-700 ${
           isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
         }`}
       >
@@ -85,7 +85,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, activePage, onNavigate }) =
           <button 
             key={link.id} 
             onClick={() => handleNavClick(link.id)}
-            className="text-6xl font-heading font-bold text-left hover:italic hover:translate-x-4 transition-all duration-500 opacity-60 hover:opacity-100"
+            className="text-6xl font-heading font-bold text-left hover:italic hover:translate-x-4 transition-all duration-500 text-brand-white opacity-60 hover:opacity-100 hover:text-brand-accent"
             style={{ transitionDelay: `${idx * 50}ms` }}
           >
             {link.name}

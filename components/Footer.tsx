@@ -37,7 +37,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   ];
 
   return (
-    <footer className="bg-black border-t border-white/5 pt-24 pb-12 relative overflow-hidden">
+    <footer className="bg-brand-black border-t border-white/5 pt-24 pb-12 relative overflow-hidden">
       <div className="absolute bottom-0 right-0 w-full h-full bg-grid opacity-5 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-8 relative z-10">
@@ -45,12 +45,12 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           
           <div className="md:col-span-5 space-y-10">
             <button onClick={() => onNavigate('home')} className="flex items-center space-x-2">
-              <span className="text-2xl font-heading font-bold tracking-tighter">
-                SCROLL<span className="text-indigo-600">FUEL</span>
+              <span className="text-2xl font-heading font-bold tracking-tighter text-brand-white">
+                SCROLL<span className="text-brand-primary">FUEL</span>
               </span>
             </button>
             <p className="text-gray-500 text-sm font-light leading-relaxed max-w-xs">
-              Designing high-performance brand ecosystems in Nagpur and beyond. Est. 2014.
+              Designing high-performance brand ecosystems in <span className="text-brand-accent">Nagpur</span> and beyond. Est. 2014.
             </p>
             <div className="flex flex-wrap gap-6">
               {socialLinks.map((social, i) => (
@@ -59,7 +59,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   href={social.href} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-indigo-500 transition-all duration-500 hover:scale-110"
+                  className="text-gray-600 hover:text-brand-primary transition-all duration-500 hover:scale-110"
                   title={social.name}
                 >
                   {social.icon}
@@ -69,34 +69,34 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
 
           <div className="md:col-span-2 space-y-8">
-            <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-white">Index</h4>
+            <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-white">Index</h4>
             <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-gray-500">
-              <li><button onClick={() => onNavigate('home')} className="hover:text-indigo-400 transition-colors">Start</button></li>
-              <li><button onClick={() => onNavigate('about')} className="hover:text-indigo-400 transition-colors">Agency</button></li>
-              <li><button onClick={() => onNavigate('services')} className="hover:text-indigo-400 transition-colors">Services</button></li>
-              <li><button onClick={() => onNavigate('portfolio')} className="hover:text-indigo-400 transition-colors">Archive</button></li>
+              <li><button onClick={() => onNavigate('home')} className="hover:text-brand-accent transition-colors">Start</button></li>
+              <li><button onClick={() => onNavigate('about')} className="hover:text-brand-accent transition-colors">Agency</button></li>
+              <li><button onClick={() => onNavigate('services')} className="hover:text-brand-accent transition-colors">Services</button></li>
+              <li><button onClick={() => onNavigate('portfolio')} className="hover:text-brand-accent transition-colors">Archive</button></li>
             </ul>
           </div>
 
           <div className="md:col-span-5 space-y-12">
             <div className="space-y-4">
-              <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-white">Direct Connect</h4>
-              <a href="mailto:scrollfuel@gmail.com" className="block text-2xl font-heading font-bold tracking-tighter hover:text-indigo-500 transition-colors">
+              <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-white">Direct Connect</h4>
+              <a href="mailto:scrollfuel@gmail.com" className="block text-2xl font-heading font-bold tracking-tighter hover:text-brand-primary transition-colors text-brand-white">
                 SCROLLFUEL@GMAIL.COM
               </a>
-              <p className="text-[10px] font-black tracking-widest text-white/20 uppercase">Official Hub: scrollfuel.in</p>
+              <p className="text-[10px] font-black tracking-widest text-white/20 uppercase">Official Hub: <span className="text-brand-accent">scrollfuel.in</span></p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-6">
               <button 
                 onClick={() => onNavigate('contact')}
-                className="px-10 py-4 border border-white/10 hover:border-indigo-500 rounded-full text-[10px] font-black uppercase tracking-widest transition-all"
+                className="px-10 py-4 border border-white/10 hover:border-brand-primary rounded-full text-[10px] font-black uppercase tracking-widest transition-all text-brand-white"
               >
                 Start New Project
               </button>
               <button 
                 onClick={scrollToTop}
-                className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all group"
+                className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-white hover:text-brand-black transition-all group"
               >
                 <ArrowUp size={16} className="group-hover:-translate-y-1 transition-transform" />
               </button>
@@ -105,9 +105,9 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-black tracking-[0.3em] text-white/20 uppercase">
-          <p>© 2024 SCROLLFUEL — DESIGN & BRAND ARCHITECTURE</p>
+          <p>© 2024 SCROLLFUEL — <span className="text-brand-primary/50">DESIGN & BRAND ARCHITECTURE</span></p>
           <div className="flex gap-10">
-            <a href="https://scrollfuel.in" target="_blank" className="hover:text-white transition-colors">scrollfuel.in</a>
+            <a href="https://scrollfuel.in" target="_blank" className="hover:text-brand-accent transition-colors">scrollfuel.in</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Sync</a>
           </div>
         </div>

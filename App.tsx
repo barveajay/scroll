@@ -9,6 +9,7 @@ import PortfolioPage from './pages/PortfolioPage';
 import BlogPage from './pages/BlogPage';
 import ContactPage from './pages/ContactPage';
 import AIAssistant from './components/AIAssistant';
+import CustomCursor from './components/CustomCursor';
 
 export type PageView = 'home' | 'about' | 'services' | 'portfolio' | 'blog' | 'contact';
 
@@ -42,7 +43,10 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen selection:bg-indigo-500/30 bg-[#030303]">
+    <div className="min-h-screen selection:bg-brand-primary/30 bg-brand-black">
+      {/* High-End Mouse Theme */}
+      <CustomCursor />
+
       <Navbar 
         isScrolled={isScrolled} 
         activePage={activePage} 

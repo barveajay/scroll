@@ -9,13 +9,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                primary: '#8BC53F',
+                accent: '#FFC93B',
+                black: '#000000',
+                white: '#FFFFFF',
+              }
+            }
+          }
+        }
+      }
+    </script>
     <style>
       :root {
-        --brand-indigo: #6366f1;
-        --brand-obsidian: #030303;
+        --brand-primary: #8BC53F;
+        --brand-accent: #FFC93B;
+        --brand-obsidian: #000000;
         --linear-stroke: rgba(255, 255, 255, 0.08);
       }
       
+      * {
+        cursor: none !important;
+      }
+
       body {
         font-family: 'Plus Jakarta Sans', sans-serif;
         background-color: var(--brand-obsidian);
@@ -78,7 +99,7 @@
 
       .glass-card:hover {
         background: rgba(255, 255, 255, 0.03);
-        border-color: var(--brand-indigo);
+        border-color: var(--brand-accent);
       }
 
       .line-draw {
@@ -143,7 +164,16 @@
       ::-webkit-scrollbar { width: 4px; }
       ::-webkit-scrollbar-track { background: #000; }
       ::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
-      ::-webkit-scrollbar-thumb:hover { background: var(--brand-indigo); }
+      ::-webkit-scrollbar-thumb:hover { background: var(--brand-primary); }
+      
+      @media (max-width: 1024px) {
+        * {
+          cursor: auto !important;
+        }
+        #custom-cursor-container {
+          display: none !important;
+        }
+      }
     </style>
     <script type="importmap">
 {

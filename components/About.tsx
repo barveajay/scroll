@@ -15,13 +15,13 @@ const GrowthLine = () => (
     <circle cx="100" cy="160" r="3" fill="white" />
     <circle cx="200" cy="100" r="3" fill="white" />
     <circle cx="300" cy="80" r="3" fill="white" />
-    <circle cx="400" cy="20" r="3" fill="#6366f1" />
+    <circle cx="400" cy="20" r="3" fill="#FFC93B" />
   </svg>
 );
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-32 bg-[#030303] relative overflow-hidden border-y border-white/5">
+    <section id="about" className="py-32 bg-brand-black relative overflow-hidden border-y border-white/5">
       <GrowthLine />
       
       {/* 3D Growth Engine Art Background */}
@@ -39,23 +39,23 @@ const About: React.FC = () => {
                 alt="Studio Culture" 
                 className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:scale-110 group-hover:grayscale-0 opacity-40 group-hover:opacity-100"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent" />
               
               {/* Floating Linear HUDs */}
               <div className="absolute top-8 left-8 p-4 glass-card rounded-xl border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-4 group-hover:translate-y-0">
                 <div className="flex items-center gap-3 mb-2">
-                  <Activity size={10} className="text-indigo-500" />
-                  <span className="text-[8px] font-black tracking-widest uppercase">REALTIME ANALYSIS</span>
+                  <Activity size={10} className="text-brand-primary" />
+                  <span className="text-[8px] font-black tracking-widest uppercase text-brand-white">REALTIME ANALYSIS</span>
                 </div>
                 <div className="w-32 h-1 bg-white/5 rounded-full overflow-hidden">
-                  <div className="h-full bg-indigo-500 w-3/4 animate-pulse" />
+                  <div className="h-full bg-brand-accent w-3/4 animate-pulse" />
                 </div>
               </div>
 
               <div className="absolute bottom-8 right-8 p-4 glass-card rounded-xl border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-700 -translate-y-4 group-hover:translate-y-0">
                 <div className="flex items-center gap-3">
-                  <Fingerprint size={10} className="text-indigo-500" />
-                  <span className="text-[8px] font-black tracking-widest uppercase">ID: SCROLLFUEL_04</span>
+                  <Fingerprint size={10} className="text-brand-accent" />
+                  <span className="text-[8px] font-black tracking-widest uppercase text-brand-white">ID: SCROLLFUEL_04</span>
                 </div>
               </div>
             </div>
@@ -63,36 +63,36 @@ const About: React.FC = () => {
 
           <div className="lg:col-span-6 space-y-12">
             <div className="space-y-6">
-              <span className="text-[10px] font-black tracking-[0.5em] uppercase text-indigo-500">The Manifesto</span>
-              <h2 className="text-4xl md:text-6xl font-heading font-bold tracking-tighter leading-[1.1]">
+              <span className="text-[10px] font-black tracking-[0.5em] uppercase text-brand-primary">The Manifesto</span>
+              <h2 className="text-4xl md:text-6xl font-heading font-bold tracking-tighter leading-[1.1] text-brand-white">
                 WE DON'T FOLLOW <br />
-                <span className="text-indigo-600">TRENDS.</span><br />
+                <span className="text-brand-accent italic">TRENDS.</span><br />
                 WE CODE THEM.
               </h2>
             </div>
 
-            <p className="text-lg text-gray-500 leading-relaxed font-light border-l-2 border-indigo-500/30 pl-8">
+            <p className="text-lg text-gray-400 leading-relaxed font-light border-l-2 border-brand-primary/30 pl-8">
               ScrollFuel is a high-performance design laboratory. We merge the aesthetics of luxury branding with the raw logic of digital marketing algorithms. 
             </p>
 
             <div className="grid sm:grid-cols-2 gap-10">
               {[
-                { icon: BarChart3, title: 'LINEAR PRECISION', desc: 'Every pixel serves a purpose in our technical brand ecosystems.' },
-                { icon: Activity, title: 'CULTURAL IMPACT', desc: 'Storytelling that transcends screens and creates movement.' }
+                { icon: BarChart3, title: 'LINEAR PRECISION', desc: 'Every pixel serves a purpose in our technical brand ecosystems.', color: 'text-brand-primary' },
+                { icon: Activity, title: 'CULTURAL IMPACT', desc: 'Storytelling that transcends screens and creates movement.', color: 'text-brand-accent' }
               ].map((item, idx) => (
                 <div key={idx} className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <item.icon size={14} className="text-indigo-500" />
-                    <h4 className="text-xs font-black tracking-widest uppercase">{item.title}</h4>
+                    <item.icon size={14} className={item.color} />
+                    <h4 className="text-xs font-black tracking-widest uppercase text-brand-white">{item.title}</h4>
                   </div>
                   <p className="text-sm text-gray-500 leading-relaxed font-light">{item.desc}</p>
                 </div>
               ))}
             </div>
 
-            <button className="group flex items-center gap-4 text-[10px] font-black tracking-[0.4em] uppercase hover:text-indigo-400 transition-all">
+            <button className="group flex items-center gap-4 text-[10px] font-black tracking-[0.4em] uppercase text-brand-white hover:text-brand-accent transition-all">
               Discover our story
-              <div className="h-px w-12 bg-indigo-500 group-hover:w-24 transition-all" />
+              <div className="h-px w-12 bg-brand-primary group-hover:w-24 transition-all" />
             </button>
           </div>
         </div>

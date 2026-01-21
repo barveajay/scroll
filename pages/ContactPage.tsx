@@ -15,16 +15,16 @@ const ContactPage: React.FC = () => {
   ];
 
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-32 pb-24 bg-brand-black">
       <section className="max-w-7xl mx-auto px-6">
         <div className="mb-20">
-          <div className="text-indigo-500 font-bold uppercase tracking-widest mb-4">Contact Us</div>
-          <h1 className="text-6xl md:text-8xl font-black font-heading tracking-tighter mb-8 italic">SYNC YOUR<br/><span className="text-indigo-600 not-italic">VISION.</span></h1>
+          <div className="text-brand-primary font-bold uppercase tracking-widest mb-4">Contact Us</div>
+          <h1 className="text-6xl md:text-8xl font-black font-heading tracking-tighter mb-8 italic text-brand-white">SYNC YOUR<br/><span className="text-brand-accent not-italic">VISION.</span></h1>
           
           <div className="flex flex-wrap gap-6 mt-8">
             <button 
               onClick={() => window.open(`https://wa.me/${WHATSAPP_NUMBER}`, '_blank')}
-              className="flex items-center gap-3 px-8 py-4 bg-green-600/10 border border-green-600/20 text-green-500 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-green-600 hover:text-white transition-all duration-500 shadow-[0_0_30px_rgba(34,197,94,0.15)]"
+              className="flex items-center gap-3 px-8 py-4 bg-brand-primary/10 border border-brand-primary/20 text-brand-primary rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-brand-primary hover:text-brand-black transition-all duration-500 shadow-[0_0_30px_rgba(139,197,63,0.15)]"
             >
               <MessageCircle size={18} fill="currentColor" />
               Direct WhatsApp Sync
@@ -37,7 +37,7 @@ const ContactPage: React.FC = () => {
                   href={social.href} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-500 hover:text-indigo-500 hover:border-indigo-500 transition-all"
+                  className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-500 hover:text-brand-accent hover:border-brand-accent transition-all"
                   title={social.name}
                 >
                   {social.icon}
@@ -56,10 +56,10 @@ const ContactPage: React.FC = () => {
         >
           <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
             <div className="text-center group-hover:scale-110 transition-transform duration-500">
-              <div className="w-20 h-20 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_40px_rgba(99,102,241,0.5)]">
-                <MapPin size={32} className="text-white animate-bounce" />
+              <div className="w-20 h-20 bg-brand-accent rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_40px_rgba(255,201,59,0.5)]">
+                <MapPin size={32} className="text-brand-black animate-bounce" />
               </div>
-              <p className="text-white font-black tracking-[0.3em] uppercase text-sm mb-2">Visit Our Studio</p>
+              <p className="text-brand-white font-black tracking-[0.3em] uppercase text-sm mb-2">Visit Our Studio</p>
               <p className="text-gray-400 text-[10px] font-bold tracking-widest uppercase">Nagpur, Maharashtra (Wardha Rd)</p>
             </div>
           </div>
@@ -77,16 +77,16 @@ const ContactPage: React.FC = () => {
 
         <div className="mt-32 grid md:grid-cols-3 gap-12 text-center">
           <div>
-            <h4 className="text-indigo-500 font-bold uppercase tracking-widest mb-4">Official Email</h4>
-            <a href="mailto:scrollfuel@gmail.com" className="text-xl md:text-2xl font-bold font-heading hover:text-indigo-500 transition-colors">scrollfuel@gmail.com</a>
+            <h4 className="text-brand-primary font-bold uppercase tracking-widest mb-4">Official Email</h4>
+            <a href="mailto:scrollfuel@gmail.com" className="text-xl md:text-2xl font-bold font-heading hover:text-brand-primary transition-colors text-brand-white">scrollfuel@gmail.com</a>
           </div>
           <div>
-            <h4 className="text-indigo-500 font-bold uppercase tracking-widest mb-4">WhatsApp Direct</h4>
-            <p className="text-xl md:text-2xl font-bold font-heading">+{WHATSAPP_NUMBER}</p>
+            <h4 className="text-brand-accent font-bold uppercase tracking-widest mb-4">WhatsApp Direct</h4>
+            <p className="text-xl md:text-2xl font-bold font-heading text-brand-white">+{WHATSAPP_NUMBER}</p>
           </div>
           <div>
-            <h4 className="text-indigo-500 font-bold uppercase tracking-widest mb-4">Official Hub</h4>
-            <a href="https://scrollfuel.in" target="_blank" className="text-xl md:text-2xl font-bold font-heading hover:text-indigo-500 transition-colors">scrollfuel.in</a>
+            <h4 className="text-brand-primary font-bold uppercase tracking-widest mb-4">Official Hub</h4>
+            <a href="https://scrollfuel.in" target="_blank" className="text-xl md:text-2xl font-bold font-heading hover:text-brand-primary transition-colors text-brand-white">scrollfuel.in</a>
           </div>
         </div>
       </section>
